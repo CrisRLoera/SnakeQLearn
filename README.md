@@ -1,0 +1,9 @@
+# Implementa Q-learning
+
+En este proyecto se implementó el algoritmo de Q-learning para entrenar una inteligencia artificial que juegue al snake. Se uso la ecuación Bellman para actualizar los valores de la tabla Q en función de las recompensas recibidas. 
+El agente estuvo aprendiendo mediante prueba y error durante 500 iteraciones, sin embargo nunca se obtuvo un score alto ni en las ultimas iteraciones. Este resultado puede deberse a un entorno muy complejo y amplio ya que tiene muchos estados posibles. Si no se mejora el método de aprendizaje, el entrenar durante un mayor número de episodios no va a hacer que algoritmo muestre una mayor eficiencia.
+¿El desempeño del algoritmo fue bueno en comparación al usado para resolver laberintos? ¿A qué se debe?
+El desempeño de este algoritmo no fue bueno en comparación con el del laberinto, aquí no hay un mecanismo de exploración que permita balancear entre aprender y usar lo aprendido lo que puede hacer que el agente se estanque, además como la recompensa solo se obtiene al llegar al objetivo, el resto de las acciones no tiene una retroalimentación positiva por lo que el aprendizaje es lento.
+En el snake hay una mayor cantidad de espacios de estado a considerar, como el de la posición de la cabeza y el cuerpo de la serpiente, la longitud del cuerpo, la dirección en la que se mueve o la posición de la fruta, esto hace que la tabla Q se vuelva demasiado grande. 
+También está la desventaja de que el entorno en el juego snake es dinámico y cambia en cada episodio: la posición de la fruta cambia, la serpiente crece y se tiene el obstáculo de su propio cuerpo en movimiento. Todo esto hace que el mismo estado nunca se repita.
+Este algoritmo tiene un objetivo más complejo en comparación al algoritmo del laberinto, y las recompensas son menos frecuentes. Además las múltiples formas de morir hace que el aprendizaje por prueba y error sea mucho más costoso.
